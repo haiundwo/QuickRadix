@@ -1,6 +1,11 @@
 # QuickRadix
 Quick Radix custom sorting algorithm; fast basic radix algorithm that specializes in smaller data types.
 
+# Why use this sort?
+If you want to sort small data types or if you want to sort while ignoring a certain number of bits/bytes off of each element, then this sort can be a good option.
+
+The code can easily be tweaked to only sort specific bits as well, but currently only multiples of 4 bits off each end is supported, for optimization purposes.
+
 # Downsides
 Starts to get much slower when the amount of memory to be allocated by std::malloc reaches a certain threshold. In these cases, an in-place radix sort (such as American Flag Sort or skasort) would be better.
 
