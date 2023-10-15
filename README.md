@@ -6,6 +6,8 @@ If you want to sort small data types or if you want to sort while ignoring a cer
 
 The code can easily be tweaked to only sort specific bits as well, but currently only multiples of 4 bits off each end is supported, for optimization purposes.
 
+For example, sorting Usermode addresses can ignore 16 out of 64 bits safely; the algorithm will scale linearly in speed with multiples of 8 bytes ignored, and in this case it would be 25% faster.
+
 # Downsides
 Starts to get much slower when the amount of memory to be allocated by std::malloc reaches a certain threshold. In these cases, an in-place radix sort (such as American Flag Sort or skasort) would be better.
 
